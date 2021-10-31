@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>MY APP</title>
+</head>
+<body>
+    <main>
+        <h1 class="offscreen">Search enginge for the most popular music</h1>
+        <section class="searchEntry">
+            <h2 class="offscreen">Search Term Entry</h2>
+            <div class="logo" aria-hidden="true">
+                Search Music!
+            </div>
+            <!-- Use id for javascript selectors and class for CSS -->
+            <form id="searchBar" class="searchBar">
+                <label class="offscreen" for="search">Enter a song or artist name</label>
+                <input id="search" type="text" autocomplete="off"/>
+                <div id="clear" class="none button clear" role="button" tabindex="0" aria-lable="Clear search terms">
+                    <i class="fas fa-times"></i>
+                </div>
+                <button id="searchButton" class="button searchButton" type="submit" aria-label="Submit button"><i class="fas fa-search"></i></button>
+            </form>
+        </section>
+        <section class="results">
+            <h2 class="offscreen">Search Results</h2>
+            <div class="statsBar">
+                <div id="stats" class="stats" aria-live="assertive"></div>
+            </div>
+            <div id="searchResults" class="searchResults">
+
+                <div class="resultItem">
+                    <div class="resultTitle">
+                        <a href="">Artist</a>
+                    </div>
+                    <div class="resultContents">
+                        <div class="resultImage">
+                            <img src="" alt="artist">
+                        </div>
+                        <div class="resultText">
+                            <p class="resultDescription"></p>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><span aria-hidden="true">&lt;&lt;</span>Powered by <a href="https://wwww.rapidapi.com" target="_blank">rapidapi</a>
+        <span aria-hidden="true">&gt;&gt;</span></p>
+    </footer>
+    
+</body>
+</html>
