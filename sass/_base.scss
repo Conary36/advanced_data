@@ -1,0 +1,13 @@
+$search-bar-border: #e0e9ff;
+$stats-color: #70757a;
+$clear-button-color: #d9d9d9;
+$background-color: #e5e5e5;
+$font-color: #000;
+$link-visited-color: #609;
+$link-outline-color: #000;
+$font-stack: "Roboto", Arial, sans-serif;
+
+%flex{
+    display: flex;
+    align-items: center;
+}
