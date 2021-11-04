@@ -1,21 +1,22 @@
 const resultContents = document.querySelector(".resultContents");
+const {SECRET_KEY} = require("./config")
 
 function loadData () {
-fetch("https://genius.p.rapidapi.com/artists/16775/songs", {
-  method: "GET",
-  headers: {
-    "x-rapidapi-host": "genius.p.rapidapi.com",
-    "x-rapidapi-key": "93bf4d306dmshd13cc3fe1547f3ep164f1djsnb836e94ce652",
-  },
-})
-.then(res => res.json())
-  .then((response) => {
-    console.log(response);
-    displayData(response.response.songs)
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+    fetch("https://genius.p.rapidapi.com/artists/16775/songs", {
+    method: "GET",
+    headers: {
+        "x-rapidapi-host": "genius.p.rapidapi.com",
+        "x-rapidapi-key": SECRET_KEY,
+    },
+    })
+    .then(res => res.json())
+    .then((response) => {
+        console.log(response);
+        displayData(response.response.songs)
+    })
+    .catch((err) => {
+        console.error(err);
+    });
 }
 
 function displayData (songs) {
