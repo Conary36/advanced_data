@@ -1,22 +1,37 @@
 const resultContents = document.querySelector(".resultContents");
+const search = document.getElementById("search");
+let musicArtist = [];
 let token = config.SECRET_KEY;
 
-function loadData () {
-    fetch("https://genius.p.rapidapi.com/artists/16775/songs", {
+
+search.addEventListener("keyup", (e) => {
+    console.log(e.target.value);
+    const searchValue = e.target.value.toLowerCase();
+    const filteredArtists = musicArtist.response.songs.filter(song => {
+       return (
+         song.artist_names.toLowerCase().includes(searchValue) ||
+         song.title.toLowerCase().includes(searchValue)
+       );
+    });
+
+   displayData(filteredArtists);
+    console.log(filteredArtists);
+});
+
+const loadData = async() => {
+  try{
+    const res = await fetch("https://genius.p.rapidapi.com/artists/16775/songs", {
       method: "GET",
       headers: {
         "x-rapidapi-host": "genius.p.rapidapi.com",
         "x-rapidapi-key": token, 
       },
     })
-      .then((res) => res.json())
-      .then((response) => {
-        console.log(response);
-        displayData(response.response.songs);
-      })
-      .catch((err) => {
+    musicArtist = await res.json()
+    displayData(musicArtist.response.songs);
+  }catch(err){
         console.error(err);
-      });
+  }
 }
 
 function displayData (songs) {
